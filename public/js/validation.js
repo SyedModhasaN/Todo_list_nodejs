@@ -18,6 +18,12 @@ function validateForm() {
     document.getElementById("edit-form-" + index).style.display = "none";
     document.getElementById("action-buttons-" + index).style.display = "inline"; // show back
   }
+  function confirmDelete() {
+  return confirm("Are you sure you want to delete this task?");
+}
+function confirmEdit() {
+  return confirm("Do you want to save the changes?");
+}
 // function showEditForm(index) {
 //   const itemDiv = document.getElementById("item-" + index);
 //   const text = itemDiv.querySelector(".task-text");

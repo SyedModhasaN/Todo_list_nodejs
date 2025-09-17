@@ -40,13 +40,13 @@
         <button type="button" class="edit-btn" onclick="showEditForm(<%= index %>)">Edit</button>
 
         <!-- Delete Button -->
-        <form action="/delete" method="post" class="delete-form" style="display:inline;">
+        <form action="/delete" method="post" class="delete-form" style="display:inline;" onsubmit="return confirmDelete()">
           <button type="submit" name="delete" class="delete-btn" value="<%= items._id %>">Delete</button>
         </form>
       </div>
 
       <!-- Hidden Edit Form -->
-      <form id="edit-form-<%= index %>" action="/edit/<%= items._id %>" method="post" class="edit-form" style="display:none; margin-top:5px;">
+      <form id="edit-form-<%= index %>" action="/edit/<%= items._id %>" method="post" class="edit-form" style="display:none; margin-top:5px;"  onsubmit="return confirmEdit()">
         <input type="text" id="edit-input-<%= index %>" name="updatedTask" value="<%= items.name %>" required>
         <button type="submit">Save</button>
         <button type="button" onclick="cancelEdit(<%= index %>)">Cancel</button>

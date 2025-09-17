@@ -6,7 +6,7 @@ var app = express();
 app.set("view engine","ejs");
 app.use(express.static("public"));
 app.use(express.urlencoded({extended:true}));
-mongoose.connect("mongodb://localhost:27017/todo");
+mongoose.connect("mongodb+srv://modassir771_db_user:YYf3mroQk6kOcAfb@tododb.xxb2qvs.mongodb.net/?retryWrites=true&w=majority&appName=todoDB");
 // var items = [];
 const trySchema = mongoose.Schema({
     name:String

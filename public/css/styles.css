@@ -115,6 +115,10 @@ form {
 text-align: center;
 margin-left: 20px;
 }
+.box-main form {
+    text-align: start;
+    margin-left: 0px;
+}
 .box-main input[type="text"]{
     text-align: start;
     height:max-content;

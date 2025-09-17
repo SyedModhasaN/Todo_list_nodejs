@@ -6,28 +6,40 @@ function validateForm() {
   }
   return true; // allow form submission
 }
-function showEditForm(index) {
-  const itemDiv = document.getElementById("item-" + index);
-  const text = itemDiv.querySelector(".task-text");
-  const form = itemDiv.querySelector(".edit-form");
-  const editBtn = itemDiv.querySelector(".edit-btn");
-  const deleteBtn = itemDiv.querySelector(".delete-btn");
+ function showEditForm(index) {
+    document.getElementById("task-text-" + index).style.display = "none";
+    document.getElementById("edit-form-" + index).style.display = "block";
+    document.getElementById("action-buttons-" + index).style.display = "none"; // hide Edit + Delete
+     document.getElementById("edit-input-" + index).focus();
+  }
 
-  text.style.display = "none";     
-  form.style.display = "inline";   
-  editBtn.style.display = "none";  
-  deleteBtn.style.display = "none";
-}
+  function cancelEdit(index) {
+    document.getElementById("task-text-" + index).style.display = "block";
+    document.getElementById("edit-form-" + index).style.display = "none";
+    document.getElementById("action-buttons-" + index).style.display = "inline"; // show back
+  }
+// function showEditForm(index) {
+//   const itemDiv = document.getElementById("item-" + index);
+//   const text = itemDiv.querySelector(".task-text");
+//   const form = itemDiv.querySelector(".edit-form");
+//   const editBtn = itemDiv.querySelector(".edit-btn");
+//   const deleteBtn = itemDiv.querySelector(".delete-btn");
 
-function cancelEdit(index) {
-  const itemDiv = document.getElementById("item-" + index);
-  const text = itemDiv.querySelector(".task-text");
-  const form = itemDiv.querySelector(".edit-form");
-  const editBtn = itemDiv.querySelector(".edit-btn");
-  const deleteBtn = itemDiv.querySelector(".delete-btn");
+//   text.style.display = "none";     
+//   form.style.display = "inline";   
+//   editBtn.style.display = "none";  
+//   deleteBtn.style.display = "none";
+// }
 
-  text.style.display = "block";    
-  form.style.display = "none";     
-  editBtn.style.display = "inline";
-  deleteBtn.style.display = "inline";
-}
+// function cancelEdit(index) {
+//   const itemDiv = document.getElementById("item-" + index);
+//   const text = itemDiv.querySelector(".task-text");
+//   const form = itemDiv.querySelector(".edit-form");
+//   const editBtn = itemDiv.querySelector(".edit-btn");
+//   const deleteBtn = itemDiv.querySelector(".delete-btn");
+
+//   text.style.display = "block";    
+//   form.style.display = "none";     
+//   editBtn.style.display = "inline";
+//   deleteBtn.style.display = "inline";
+// }

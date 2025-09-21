@@ -49,7 +49,7 @@
       <!-- Hidden Edit Form -->
       <form id="edit-form-<%= index %>" action="/edit/<%= items._id %>" method="post" class="edit-form" style="display:none; margin-top:5px;"  onsubmit="return confirmEdit()">
         <input type="text" id="edit-input-<%= index %>" name="updatedTask" value="<%= items.name %>" required>
-        <button type="submit">Save</button>
+        <button type="submit"><i class="fa-solid fa-check"></i></button>
         <button type="button" onclick="cancelEdit(<%= index %>)"><i class="fa-solid fa-xmark"></i></button>
       </form>
     </div>

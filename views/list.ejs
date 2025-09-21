@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/fontawesome/css/all.min.css">
 </head>
 <body>
     <nav class="header">
@@ -37,11 +38,11 @@
       <!-- Action Buttons (Edit + Delete) -->
       <div id="action-buttons-<%= index %>" style="display:inline;">
         <!-- Edit Button -->
-        <button type="button" class="edit-btn" onclick="showEditForm(<%= index %>)">Edit</button>
+        <button type="button" class="edit-btn" onclick="showEditForm(<%= index %>)"><i class="fa-solid fa-pen-nib"></i></button>
 
         <!-- Delete Button -->
         <form action="/delete" method="post" class="delete-form" style="display:inline;" onsubmit="return confirmDelete()">
-          <button type="submit" name="delete" class="delete-btn" value="<%= items._id %>">Delete</button>
+          <button type="submit" name="delete" class="delete-btn" value="<%= items._id %>"><i class="fa-solid fa-trash"></i></button>
         </form>
       </div>
 
@@ -49,7 +50,7 @@
       <form id="edit-form-<%= index %>" action="/edit/<%= items._id %>" method="post" class="edit-form" style="display:none; margin-top:5px;"  onsubmit="return confirmEdit()">
         <input type="text" id="edit-input-<%= index %>" name="updatedTask" value="<%= items.name %>" required>
         <button type="submit">Save</button>
-        <button type="button" onclick="cancelEdit(<%= index %>)">Cancel</button>
+        <button type="button" onclick="cancelEdit(<%= index %>)"><i class="fa-solid fa-xmark"></i></button>
       </form>
     </div>
   <% }) %>

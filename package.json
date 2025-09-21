@@ -9,6 +9,7 @@
   "author": "Syed Modassir Hasan",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.0.1",
     "body-parser": "^2.2.0",
     "dotenv": "^17.2.2",
     "ejs": "^3.1.10",

@@ -28,6 +28,7 @@ const item = mongoose.model("task", trySchema);
 // app.get("/",function(req,res){
 //     res.render("list",{ejes : items})
 // });
+app.use('/fontawesome', express.static(__dirname + '/node_modules/@fortawesome/fontawesome-free'));
 app.get("/", function (req, res) {
   item.find({})
     .then(foundItems => {

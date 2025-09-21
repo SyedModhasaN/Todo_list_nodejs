@@ -18,12 +18,30 @@ function validateForm() {
     document.getElementById("edit-form-" + index).style.display = "none";
     document.getElementById("action-buttons-" + index).style.display = "inline"; // show back
   }
+
   function confirmDelete() {
-  return confirm("Are you sure you want to delete this task?");
+  if (confirm("Are you sure you want to delete this task?")) {
+    alert("Task deleted successfully!");
+    return true; // allow form submission
+  }
+  return false; // cancel form submission
 }
+
 function confirmEdit() {
-  return confirm("Do you want to save the changes?");
+  if (confirm("Do you want to save the changes?")) {
+    alert("Task updated successfully!");
+    return true; // allow form submission
+  }
+  return false; // cancel form submission
 }
+
+
+//   function confirmDelete() {
+//   return confirm("Are you sure you want to delete this task?");
+// }
+// function confirmEdit() {
+//   return confirm("Do you want to save the changes?");
+// }
 // function showEditForm(index) {
 //   const itemDiv = document.getElementById("item-" + index);
 //   const text = itemDiv.querySelector(".task-text");
